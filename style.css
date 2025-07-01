@@ -1,171 +1,222 @@
-*{
-    padding: 0;
-    margin: 0;
+/* Variables */
+
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+/* Main Styling */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: black;
+  background-color: #b2b2b2;
 }
-
-h1 {
-  color: #007acc;
+html{
+    scroll-behavior: smooth;
 }
-
-header{
-    color: black;
-    border-radius: 10px;
-    position:absolute;
-    width: 100%;
-
-    height: 300px;
-    background-color: rgba(0, 0, 0, 0.0);
-    padding: 0;
-    margin: 0;
-}
-.logo{
-    margin: 90px; 
-     display: flex;
-    align-items: center;
-    padding: 10px 20px;
-    
-}
-.nav{
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    gap: 15%;
-    height: 70px;
-
-    position:relative;
-    width: 100%;
-    z-index: 2000;
-    background-color: rgba(0, 0, 0, 0.1);
-    border: 2px rgba(0, 0, 0, 0.1) solid;
-    transition: scale 0.2 ease;
-    backdrop-filter:blur(4px);
-}
-
-.navbar{
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
-    
-    
-}
- 
-.navbar ul{
-    display: flex;
-    list-style: none;
-    gap:30px;
-}
-.navbar ul li a {
-    text-decoration: none;
-    color: black;
-    font-weight: bolder;
-    height: 100vh;
-}
-.navbar ul li a:hover{
-    background-color:  rgb(134, 153, 24);
-    padding: 5px 5px;
+.btn{
+    background-color: rgb(217, 255, 0);
+    padding: 10px;
     border-radius: 20px;
-    scale: 1.05;
-    
-}
-
-
-.toggle{
-
-    font-size: 1.5rem;
-    cursor: pointer;
-    display: none;
-    margin-right: 20px;
-
-}
-.connect{
-    text-decoration: none;
-    background-color: rgb(217, 255, 0) ;
-    padding: 10px 10px;
     color: white;
-    font-weight: bolder;
-    border-radius: 20px;
-    margin-right: 20px;
-    transition: scale 0.2 ease;
 }
-.connect:hover{
-    background-color:  rgb(134, 153, 24);
-    scale: 1.05;
+.btn:hover{
+    background-color:  rgb(134, 153, 24);;
 }
-.toggle_menu{
-    position: fixed;
-    right: 2rem;
-    top: 67px;
-    width: 300px;
-    height: 0;
-    background-color: rgb(2, 2, 2);
-    backdrop-filter: blur(55px);
-    border-radius: 10px;
+
+p {
+  margin: 10px 0;
+}
+
+i {
+  display: inline;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  
+}
+
+
+
+/* Section colors */
+#home {
+  background-color: rgb(218, 213, 213);
+}
+#homes{
+    background-image: url('salon-unfocused-avec-une-image-sur-le-mur.jpg');
+    background-size: cover;
+    display: flex;
+   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  padding: 2rem;
+}
+.section{
+  background-color: white;
+  margin: 20px;
+  height: auto;
+  padding: 2rem;
+}
+
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 80px;
+  background-color: #f4f4f4;
+  position: fixed;
+  top: 0;
+  padding: 1.25rem;
+  
+}
+
+.navbar .logo {
+  padding: 1.5rem;
+  font-size: 2rem;
+}
+
+.navbar .logo a {
+  transition: color 0.4s ease-in-out;
+}
+
+.navbar .logo a:hover {
+  color: var(--secondary-color);
+}
+
+.navbar .nav-menu {
+  display: flex;
+}
+
+.nav-menu .nav-item a {
+  display: inline-block;
+  padding: 1rem 1.4rem 1rem 1rem;
+  width: 100%;
+  transition: background 0.3s ease;
+}
+
+.nav-menu .nav-item a:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.hamburger {
+  display: none;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+  background-color: #101010;
+}
+
+.à-louer{
+    gap: 10px;
+    display: flex;
+    background-color:white;
+    height: 100%;
+    width: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.à-louer div{
+    background-color:white;
+    width: 20%;
+    height: 48%;
+     border: #555;
+     border-top: 2px solid #FFFFFF75;
+     border-left: 2px solid #FFFFFF75;
+     border-radius: 15px;
+    box-shadow:  10px 10px 15px rgba(0.1,0.1, 0.1, 0.1) ;
+    padding: 5px;
     overflow: hidden;
-    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    display: none;
+    flex-basis: 270px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
-.toggle_menu_open{
-    height: 270px;
-    z-index: 1000;
-
+.à-louer div:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);  
 }
-.toggle_menu li{
-    padding: 0.7rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.toggle_menu .connect{
-    width: 90%;
-    display: flex;
-    justify-content: center;
+.à-louer div img{
+    width: 100%;
+    height: 200px;
+    background-size: cover;    
 }
 
-.toggle_menu li a{
-     text-decoration: none;
-    color: white;
-    font-weight: bolder;
+/* Responsive */
+@media only screen and (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    /* 
+      You can change the position of the navbar 
+      ----------------------------------------------------------------------------------
+      To succesfully do this, you must change the .nav-menu.active to the chosen position
+      * right: -100%;
+      * .right-menu.active { right: 0;}
+      -----------------------------------------------------------------------------------
+    */
+    right: -100%;
+    top: 0rem;
+    flex-direction: column;
+    /* This controls the width of the navbar container*/
+    width: 50%;
+    /* This controls the height of the navbar container */
+    height: 100%;
+    text-align: right;
+    transition: 0.3s;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    /* This controls the background color of the navbar container*/
+    background-color: #f4f4f4;
+  }
 
-}
-.toggle_menu li a:hover{
-    background-color:  rgb(134, 153, 24);
-    padding: 10px 10px;
-    border-radius: 20px;
-    scale: 1.05;
-}
+  .nav-menu.active {
+    right: 0;
+  }
 
+  .nav-menu li:first-child {
+     margin-top: 4.5rem;
+     border-top: 1px solid #ccc;
+  }
 
+  .nav-item {
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+  }
 
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
 
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
 
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
 
-
-
-
-@media (max-width:1070px){
-    .navbar,.connect{
-        display: none;
-    }
-    .toggle{
-        display: block;
-        
-    }
-    .toggle_menu{
-        display: block;
-    }
-
-}
-
-@media (max-width:1070px){
-   .toggle_menu{
-    width: unset;
-    left: 2rem;
-    
-
-   }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
 }
