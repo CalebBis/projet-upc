@@ -25,7 +25,7 @@ html{
     color: white;
 }
 .btn:hover{
-    background-color:  rgb(134, 153, 24);;
+    background-color:  rgb(134, 153, 24);
 }
 
 p {
@@ -69,7 +69,10 @@ a {
   padding: 2rem;
 }
 
-
+header{
+  z-index: 1000;
+  position: absolute;
+}
 /* Navbar Styling */
 .navbar {
   display: flex;
@@ -106,12 +109,14 @@ a {
   display: inline-block;
   padding: 1rem 1.4rem 1rem 1rem;
   width: 100%;
+  font-weight: bolder;
   transition: background 0.3s ease;
+   color: black;
 }
 
 .nav-menu .nav-item a:hover {
-  background-color: var(--primary-color);
-  color: #fff;
+  background-color: rgb(134, 153, 24);
+  color: black;
 }
 
 .hamburger {
@@ -162,6 +167,47 @@ a {
     height: 200px;
     background-size: cover;    
 }
+
+.btn3{
+    background-color: rgb(217, 255, 0);
+    padding: 5px;
+    border-radius: 20px;
+    color: white;
+}
+
+/* modale */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.modal-content {
+background: white;
+  padding: 30px;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  position: relative;
+
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  cursor: pointer;
+
+}
+
 
 /* Responsive */
 @media only screen and (max-width: 768px) {
