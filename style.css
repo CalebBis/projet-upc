@@ -208,6 +208,96 @@ background: white;
 
 }
 
+.contact-section{
+  background-image: url('salon-unfocused-avec-une-image-sur-le-mur.jpg');
+   background-size: cover;
+  height: 100vh;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.inscr{
+  text-decoration: underline;
+  color: blue;
+}
+/* Formulaire connexion*/
+.form-container{
+     background-color: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  width: 60%;
+  margin: auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.form-container h4 {
+  text-align: center;
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.form-container h1 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.form-container h1 span {
+  color: rgb(217, 255, 0);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.form-group input {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  outline: none;
+  font-size: 16px;
+}
+
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  resize: vertical;
+  font-size: 16px;
+}
+
+button {
+  width: 150px;
+  padding: 12px;
+  background-color: rgb(217, 255, 0);
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  align-self: center;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: rgb(134, 153, 24);
+}
+
+
 
 /* Responsive */
 @media only screen and (max-width: 768px) {
@@ -264,5 +354,29 @@ background: white;
 
   .hamburger.active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+@media (max-width:1000px){
+    .pform{
+    width: 70%;
+ }
+}
+@media (max-width: 600px) {
+  .form-group {
+    flex-direction: column;
+  }
+  .form-container{
+    overflow:hidden;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .form-group {
+    flex-direction: column;
+    
   }
 }
