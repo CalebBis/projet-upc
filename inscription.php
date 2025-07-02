@@ -1,3 +1,36 @@
+<?php 
+
+$username = "root";
+$servername ="127.0.0.1";
+$password = "";
+$dbname = "immo_web" ;
+
+$conn = new mysqli($servername , $username , $password , $dbname);
+
+if($conn->connect_error){
+    die("erreur de connexion :" . $conn->connect_error);
+
+} 
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nom = $_POST['nom'];
+    $prenom = $_POST['prenom'];
+    $date = $_POST['date'];
+    $telephone = $_POST['telephone'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $sql = "INSERT INTO inscription (nom, prenom, date, telephone , email, password) VALUES ('$nom','$prenom','$date','$telephone','$email','$password')";
+    if($conn->query($sql) === TRUE) {
+        header("Location: index.html?message=yes");
+        exit();
+    } else {
+       header("Location: index.html?message=no");
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,9 +84,9 @@
     <div class="form-container">
       
       <h1><strong>Inscription</strong></h1>
-      <form action="index.php" method="post">
+      <form action="" method="post">
         <div class="form-group">
-          <input type="text" name="Prenom" placeholder="Entrer votre Prenom..." required>
+          <input type="text" name="prenom" placeholder="Entrer votre Prénom..." required>
           <input type="text" name="nom" placeholder="Entrer votre nom..." required>
         </div>
         <div class="form-group">
