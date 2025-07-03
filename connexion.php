@@ -1,3 +1,39 @@
+<?php
+$servername = "127.0.0.1";
+$username = "root";
+$password = "";
+$dbname = "immo_web";
+
+// Connexion à la base de données
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Vérification de la connexion
+if ($conn->connect_error) {
+    die("Erreur de connexion : " . $conn->connect_error);
+}
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST["email"]) && isset($_POST["password"])) {
+        $email = $conn->real_escape_string($_POST["email"]);
+        $password = $conn->real_escape_string($_POST["password"]);
+
+        $sql = "SELECT * FROM inscription WHERE email='$email' AND password='$password'";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows == 1) {
+            echo "Connexion réussie";
+        } else {
+            echo "Email ou mot de passe incorrect";
+        }
+    } else {
+        echo "Champs manquants dans le formulaire.";
+    }
+}
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,12 +86,12 @@
   <section class="contact-section">
     <div class="form-container">
       <h1><strong>Connexion</strong><span></span></h1>
-      <form action="" method="">
+      <form action="" method="post">
         <div class="form-group">
-          <input type="email" placeholder="Entrer votre email..." required>
+          <input type="email" name="email" placeholder="Entrer votre email..." required>
         </div>
         <div class="form-group">
-          <input type="password" placeholder="Entrer le mot de passe" required>
+          <input type="password" name="password" placeholder="Entrer le mot de passe" required>
         </div>
         <button type="submit">Envoyer</button>
       </form>
